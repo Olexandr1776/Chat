@@ -1,0 +1,232 @@
+html, body {
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+main{
+ width: 100%;
+ height: 100%;
+ background: linear-gradient(270deg, #2660ff, #9cc2ff);
+
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+#log_site{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+}
+
+.buttons_decide{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+}
+.inputs {
+  width: 420px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.15); 
+  color: #fff; 
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none; 
+  border-radius: 25px;
+  backdrop-filter: blur(10px); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease; 
+  outline: none; 
+}
+
+
+.inputs:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.inputs:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+.button {
+  width: 420px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2); 
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+
+.button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+
+.button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+#chat_page{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#chat_main_page{
+  height: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+#chat{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  background: rgba(255, 255, 255, 0.15); 
+  color: #fff; 
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none; 
+  border-radius: 25px;
+  backdrop-filter: blur(10px); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease; 
+  outline: none; 
+}
+
+#chat_header_page{
+  height: 6%;
+   background: rgba(255, 255, 255, 0.15); 
+  color: #fff; 
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none; 
+  border-radius: 25px;
+  backdrop-filter: blur(10px); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease; 
+  outline: none; 
+}
+
+#friends_container{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  gap: 20px;
+
+  background: rgba(255, 255, 255, 0.15); 
+  color: #fff; 
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none; 
+  border-radius: 25px;
+  backdrop-filter: blur(10px); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease; 
+  outline: none; 
+}
+#input{
+  width: 100%;  
+}
+
+#search_friends_input{
+  width: 97%;
+}
+
+.added_frien{
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15); 
+  color: #fff; 
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none; 
+  border-radius: 25px;
+  backdrop-filter: blur(10px); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease; 
+  outline: none; 
+}
+.added_frien:hover{
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+#input_container{
+  gap: 10px
+}
+#message_input{
+  width: 80%;
+}
+#send_button{
+  width: 20%;
+  height: 60px;
+  background-color: #76abff;
+}
+
+#add_friend_container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.201);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+#friend_account_name_now{
+  background-color: rgba(255, 255, 255, 0.259);
+  width: 100%;
+  height: 8%;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 20px;
+}
+#messages{
+    height: 500px;     
+    overflow-y: auto;    
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+}
+#messages::-webkit-scrollbar {
+    width: 10px;
+}
+
+#messages::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+}
+
+#messages::-webkit-scrollbar-track {
+    background: transparent;
+}

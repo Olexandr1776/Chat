@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="stule_login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <main>
+
+        <div id = "log_site">
+            <h1 style="color: white;">Please enter in your account</h1>    
+            <div class="buttons_decide">
+                <input type="text" name="Login" id="login" class="inputs" placeholder = "your name: ">
+                <input type="text" name="password" id="password" class="inputs" placeholder = "your password: ">
+                <p id = "answer" style="color: white;"></p>
+                <button class="button" id = "button_login">regist</button>
+                
+                <p style="color: white;">if you haven't account, please <a href="chat_reg.html">reg</a></p>
+            </div>
+        </div>
+
+        <div id = "chat_page" style="display: none;">
+            <div id="chat_header_page">
+                <div id="my_account">
+                    <h2 id = "UserName"></h2>
+                    <button id="debug_button">debug_button</button>
+                </div>
+            </div>
+
+            <div id="chat_main_page">
+                <div id = "friends_container">
+                    <div id = "add_friend_container">
+                         <button class="button" id = "add_friend_button" style="width: 100%;">Add friend</button>
+                         <input type="text" id = "search_friends_input" class="inputs" placeholder="Enter name of your friend">
+                    </div>
+                    <div id = "friends_container_friend"></div>
+                </div>
+                
+                <div id="chat">
+                    <div style="height: 100%;">
+                           <div id="friend_account_name_now"><p id = "friend_account_name_now_text"></p></div>
+                            <div id="messages"></div>
+                    </div>
+                    <div id="messages"></div>
+                    <div style="display: flex; flex-direction: row;" id="input_container">
+                         <input type="text" class="inputs" id="message_input"></input>
+                         <button class="button" id = "send_button">SEND</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </main>
+    <script src="ChatLog.js"></script>
+</body>
+</html>
