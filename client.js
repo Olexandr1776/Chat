@@ -1,4 +1,4 @@
-let server = new WebSocket("ws://rosalyn-unparoled-larita.ngrok-free.dev ");
+let server = new WebSocket("wss://rosalyn-unparoled-larita.ngrok-free.dev");
 
 
 server.onopen = () => console.log("подключено")
