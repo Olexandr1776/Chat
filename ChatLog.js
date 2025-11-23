@@ -102,7 +102,7 @@ function render_friends(friends = []){
 
              friend_account_name_now_text.textContent = friend.name;
 
-            if (window.innerWidth < 431) {
+            if (window.innerWidth < 480) {
                 document.getElementById("chat").style.display = "flex";
                 document.getElementById("friends_container").style.display = "none";
             }
