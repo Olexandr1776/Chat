@@ -1,6 +1,5 @@
+let server = new WebSocket("ws://26.59.64.179:8080");
 
-
-let server = new WebSocket("wss://rosalyn-unparoled-larita.ngrok-free.dev"); 
 
 server.onopen = () => console.log("подключено");
 
@@ -20,6 +19,7 @@ let my_id = 1;
 let UserNameAccount = "";
 
 let selectedFriendId = null;
+
 
 document.getElementById("back_button").onclick = () => {
        document.getElementById("chat").style.display = "none";
@@ -102,10 +102,11 @@ function render_friends(friends = []){
 
              friend_account_name_now_text.textContent = friend.name;
 
-             document.getElementById("chat").style.display = "flex";
-             
+            if (window.innerWidth < 431) {
+                document.getElementById("chat").style.display = "flex";
+                document.getElementById("friends_container").style.display = "none";
+            }
 
-             document.getElementById("friends_container").style.display = "none";
              
          
              render_chat(selectedFriendId);
@@ -203,10 +204,10 @@ document.getElementById("add_friend_button").addEventListener('click', () => {
 })
 
 
-const debug_button = document.getElementById("debug_button");
-
-document.getElementById("debug_button").onclick = () => {
-    console.log("friends:", friends);
-    console.log("my_id:", my_id);
-    console.log("selectedFriendId:", selectedFriendId);
-};
+//const debug_button = document.getElementById("debug_button");
+//
+//document.getElementById("debug_button").onclick = () => {
+//    console.log("friends:", friends);
+//    console.log("my_id:", my_id);
+//    console.log("selectedFriendId:", selectedFriendId);
+//};

@@ -1,5 +1,11 @@
-body {
+
+
+html, body {
   font-family: 'Poppins', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
 }
 
 
@@ -7,20 +13,20 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 100%;
 }
 
 .left_side{
     width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
-
 }
 .right_side{
     width: 50%;
-    height: 1000px;
+    height: 100%;
     background: linear-gradient(270deg, #2660ff, #9cc2ff);
     display: flex;
     flex-direction: column;
@@ -31,7 +37,7 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .right_side h1{
@@ -40,7 +46,7 @@ main{
 }
 
 .inputs {
-  width: 320px;
+  width: 420px;
   height: 40px;
   background: rgba(255, 255, 255, 0.15); 
   color: #fff; 
@@ -100,11 +106,21 @@ main{
   }
   .right_side{
     width: 100%;
-    height: 1000px;
+    height: 932px;
     background: linear-gradient(270deg, #2660ff, #9cc2ff);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+ 
+  }
+  .left_side{
+    width: 100%;
+    height: 932px;
+    font-size: 12px;
+  }
+  .inputs{
+    height: 30px;
+    width: 80%;
+  }
 }

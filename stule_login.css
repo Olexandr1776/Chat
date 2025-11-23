@@ -1,11 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html, body {
   font-family: 'Poppins', sans-serif;
   height: 100%;
   width: 100%;
-  overflow: hidden;
-
-  
-
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 main{
@@ -13,7 +17,7 @@ main{
  height: 100%;
  background: linear-gradient(270deg, #2660ff, #9cc2ff);
 
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -123,8 +127,8 @@ main{
   outline: none; 
 }
 #back_button{
+  display: none;
   width: 20%;
-
 }
 
 #chat_header_page{
@@ -185,17 +189,23 @@ main{
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 }
-#input_container{
-  gap: 10px
-}
-#message_input{
+#input_container {
+  display: flex;
+  gap: 10px;
   width: 100%;
-  max-width: 100%;
 }
-#send_button{
-  width: 20%;
-  height: 60px;
-  background-color: #76abff;
+
+#message_input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;      
+  max-width: 100%;  
+}
+
+
+#send_button {
+  flex-shrink: 0;
+  width: 80px;
 }
 
 #add_friend_container{
@@ -210,7 +220,7 @@ main{
 #friend_account_name_now{
   background-color: rgba(255, 255, 255, 0.259);
   width: 100%;
-  height: 8%;
+  height: 20%;
   border-radius: 18px;
   display: flex;
   align-items: center;
@@ -218,7 +228,7 @@ main{
   font-size: 20px;
 }
 #messages{
-    height: 500px;     
+    height: 100%;     
     overflow-y: auto;    
     display: flex;
     flex-direction: column;
@@ -291,5 +301,8 @@ main{
   }
   #friends_container{
     width: 90%;
+  }
+  #back_button{
+    display: block;
   }
 }
