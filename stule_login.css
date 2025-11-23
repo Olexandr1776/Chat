@@ -3,6 +3,9 @@ html, body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+
+  
+
 }
 
 main{
@@ -119,6 +122,10 @@ main{
   transition: all 0.3s ease; 
   outline: none; 
 }
+#back_button{
+  width: 20%;
+
+}
 
 #chat_header_page{
   height: 6%;
@@ -182,7 +189,8 @@ main{
   gap: 10px
 }
 #message_input{
-  width: 80%;
+  width: 100%;
+  max-width: 100%;
 }
 #send_button{
   width: 20%;
@@ -229,4 +237,59 @@ main{
 
 #messages::-webkit-scrollbar-track {
     background: transparent;
+}
+
+#input_container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#message_input {
+  flex-grow: 1;
+  min-width: 0; /* чтобы input не выходил за контейнер */
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 25px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  outline: none;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#send_button {
+  flex-shrink: 0; /* кнопка не сжимается */
+  width: 80px; /* фиксированная ширина кнопки */
+  height: 60px;
+  background-color: #76abff;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+@media(max-width: 430px){
+  .inputs{
+    width: 90%
+  }
+  .buttons_decide{
+    width: 100%;
+  }
+  .button{
+    width: 90%;
+  }
+  #chat{
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+  #friends_container{
+    width: 90%;
+  }
 }

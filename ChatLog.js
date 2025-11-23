@@ -1,6 +1,6 @@
 
 
-let server = new WebSocket("ws://26.59.64.179:8080");
+let server = new WebSocket("wss://rosalyn-unparoled-larita.ngrok-free.dev"); 
 
 server.onopen = () => console.log("подключено");
 
@@ -20,6 +20,11 @@ let my_id = 1;
 let UserNameAccount = "";
 
 let selectedFriendId = null;
+
+document.getElementById("back_button").onclick = () => {
+       document.getElementById("chat").style.display = "none";
+        document.getElementById("friends_container").style.display = "flex";
+}
 
 function render_chat(friendId) {
     const chatBox = document.getElementById("messages");
@@ -96,6 +101,11 @@ function render_friends(friends = []){
              console.log("Выбран друг:", friend.name, "ID:", friend.id);
 
              friend_account_name_now_text.textContent = friend.name;
+
+             document.getElementById("chat").style.display = "flex";
+             
+
+             document.getElementById("friends_container").style.display = "none";
              
          
              render_chat(selectedFriendId);

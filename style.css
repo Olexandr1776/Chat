@@ -94,3 +94,17 @@ main{
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
 
+@media(max-width: 430px){
+  main{
+    flex-direction: column;
+  }
+  .right_side{
+    width: 100%;
+    height: 1000px;
+    background: linear-gradient(270deg, #2660ff, #9cc2ff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+}
