@@ -222,7 +222,9 @@ main{
   flex: 1;
   min-width: 0;
   width: 100%;      
-  max-width: 100%;  
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
 }
 
 

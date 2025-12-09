@@ -167,7 +167,7 @@ function requests_render(requests_friends) {
     container.innerHTML = ""; 
 
     if(requests_friends.length === 0){
-        alert("your request list is empty");
+        document.getElementById("requests_container_message").textContent = "empty";
         return;
     }
 
