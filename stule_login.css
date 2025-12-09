@@ -9,7 +9,7 @@ html, body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 main{
@@ -21,6 +21,21 @@ main{
   justify-content: center;
   align-items: center;
   padding: 10px;
+}
+
+#requests{
+  position: fixed; 
+  display: none;
+  top: 50px; 
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  padding: 15px;
+  z-index: 1000;
 }
 
 #log_site{
@@ -41,7 +56,7 @@ main{
 
 }
 .inputs {
-  width: 420px;
+  width: 100%;
   height: 50px;
   background: rgba(255, 255, 255, 0.15); 
   color: #fff; 
@@ -68,7 +83,7 @@ main{
 }
 
 .button {
-  width: 420px;
+  width: 100%;
   height: 50px;
   background: rgba(255, 255, 255, 0.2); 
   color: #fff;
@@ -103,14 +118,16 @@ main{
   gap: 20px;
 }
 #chat_main_page{
-  height: 100%;
+  height: 90%;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   gap: 20px;
 }
 #chat{
   width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -143,6 +160,8 @@ main{
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
   transition: all 0.3s ease; 
   outline: none; 
+  display: flex;
+  justify-content: space-between;
 }
 #friends_container_friend{
   display: flex;
@@ -172,7 +191,7 @@ main{
 }
 
 #search_friends_input{
-  width: 97%;
+  width: 100%;
 }
 
 .added_frien{
@@ -216,6 +235,7 @@ main{
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.201);
   border-radius: 10px;
   padding: 18px;
@@ -232,7 +252,7 @@ main{
   font-size: 20px;
 }
 #messages{
-    height: 100%;     
+    height: 75%;     
     overflow-y: auto;    
     display: flex;
     flex-direction: column;
@@ -262,7 +282,7 @@ main{
 
 #message_input {
   flex-grow: 1;
-  min-width: 0; /* чтобы input не выходил за контейнер */
+  min-width: 0; 
   padding: 10px 15px;
   font-size: 16px;
   border-radius: 25px;
@@ -285,6 +305,10 @@ main{
   color: white;
   font-weight: bold;
   font-size: 16px;
+}
+.inputs, .button {
+  
+  width: 100%;
 }
 
 
@@ -310,3 +334,4 @@ main{
     display: block;
   }
 }
+
