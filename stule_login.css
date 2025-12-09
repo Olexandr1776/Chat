@@ -312,7 +312,7 @@ main{
 }
 
 
-@media(max-width: 430px){
+@media(max-width: 480px){
   .inputs{
     width: 90%
   }
@@ -334,4 +334,7 @@ main{
     display: block;
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 975ae335b92583b8213fa3f2400315948526cec9
