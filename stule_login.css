@@ -316,6 +316,11 @@ main{
   .inputs{
     width: 90%
   }
+  #message_input {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  }
+
   .buttons_decide{
     width: 100%;
   }
@@ -334,7 +339,3 @@ main{
     display: block;
   }
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 975ae335b92583b8213fa3f2400315948526cec9
