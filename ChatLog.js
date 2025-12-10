@@ -1,5 +1,5 @@
-//let server = new WebSocket("ws://26.59.64.179:8080");
-let server = new WebSocket("wss://rosalyn-unparoled-larita.ngrok-free.dev");
+let server = new WebSocket("ws://26.59.64.179:8080");
+//let server = new WebSocket("wss://rosalyn-unparoled-larita.ngrok-free.dev");
 
 
 server.onopen = () => console.log("подключено");
@@ -166,10 +166,11 @@ function requests_render(requests_friends) {
     const container = document.getElementById("requests_container");
     container.innerHTML = ""; 
 
-    if(requests_friends.length === 0){
-        document.getElementById("requests_container_message").textContent = "empty";
-        return;
-    }
+    //if(requests_friends.length === 0){
+    //    const requests_container_message = document.getElementById("requests_container_message");
+    //    requests_container_message.textContent = "empty";
+    //    return;
+    //  }
 
     requests_friends.forEach(req => {
       
