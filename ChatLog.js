@@ -1,5 +1,5 @@
-//let server = new WebSocket("ws://26.59.64.179:8080");
-let server = new WebSocket("wss://rosalyn-unparoled-larita.ngrok-free.dev");
+let server = new WebSocket("ws://26.59.64.179:8080");
+//let server = new WebSocket("wss://rosalyn-unparoled-larita.ngrok-free.dev");
 
 
 server.onopen = () => console.log("подключено");
@@ -72,7 +72,7 @@ function renderMessage(from, text, date) {
 
     msg.innerHTML = `
         <div class="msg-text">${text}</div>
-        <div class="msg-time">${new Date(date).toLocaleTimeString()}</div>
+        
     `;
 
     chatMessages.appendChild(msg);
@@ -166,11 +166,10 @@ function requests_render(requests_friends) {
     const container = document.getElementById("requests_container");
     container.innerHTML = ""; 
 
-    //if(requests_friends.length === 0){
-    //    const requests_container_message = document.getElementById("requests_container_message");
-    //    requests_container_message.textContent = "empty";
-    //    return;
-    //  }
+    if(requests_friends.length === 0){
+        const requests_container_message = document.getElementById("requests_container_message");
+        requests_container_message.textContent = "empty";
+    }
 
     requests_friends.forEach(req => {
       
@@ -271,6 +270,11 @@ server.onmessage = (e) => {
     else if(data.type === "add_friend"){
         requests_render(data.Requestfriends);
         render_friends(data.friends);
+        if(data.Requestfriends.length > 0){
+            const requests_container_message = document.getElementById("requests_container_message");
+            requests_container_message.textContent = "empty";
+        }
+
     } else if (data.type === "error") {
         answer.textContent = data.message;
     }else if(data.type === "It's_already_your_friend"){
