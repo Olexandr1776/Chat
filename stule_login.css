@@ -318,9 +318,10 @@ main{
   .inputs{
     width: 90%
   }
-  #message_input {
-  background: rgba(255, 255, 255, 0.9);
-  color: #000;
+  .inputs, #message_input {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    backdrop-filter: none;
   }
 
   .buttons_decide{
