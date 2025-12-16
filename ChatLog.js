@@ -1,5 +1,5 @@
-//let server = new WebSocket("ws://26.59.64.179:8080");
-let server = new WebSocket("wss://rosalyn-unparoled-larita.ngrok-free.dev");
+let server = new WebSocket("ws://127.0.0.1:8080");
+
 
 
 server.onopen = () => console.log("подключено");
@@ -7,11 +7,13 @@ server.onopen = () => console.log("подключено");
 const answer = document.getElementById("answer");
 
 const FriensContainer = document.getElementById("friends_container_friend");
-
+                           
 const msg_input = document.getElementById("message_input");
 
+                             
 let messages = {}; 
 
+const requests_container_message = document.getElementById("requests_container_message");
 
 let friends = [];
 let not_accepted_friends = [];
@@ -162,18 +164,47 @@ function render_friends(friends = []){
     }
 }
 
+function checkEmpty() {
+    const container = document.getElementById("requests_container");
+
+    if (!container) return;
+
+    if (container.children.length === 0) {
+        requests_container_message.textContent = "empty";
+    } else {
+        requests_container_message.textContent = "";
+    }
+}
+
+
+
 function requests_render(requests_friends) {
     const container = document.getElementById("requests_container");
-    container.innerHTML = ""; 
 
-    if(requests_friends.length === 0){
-        const requests_container_message = document.getElementById("requests_container_message");
+ 
+    const unique = [];
+    const seen = new Set();
+
+    for (const r of requests_friends) {
+        if (!seen.has(r.id)) {
+            seen.add(r.id);
+            unique.push(r);
+        }
+    }
+
+    requests_friends = unique;
+
+    container.innerHTML = "";
+
+ 
+    if (requests_friends.length === 0) {
         requests_container_message.textContent = "empty";
+        return;
+    } else {
+        requests_container_message.textContent = "";
     }
 
     requests_friends.forEach(req => {
-      
-
         const wrap = document.createElement("div");
         wrap.classList.add("request_friend");
 
@@ -193,7 +224,10 @@ function requests_render(requests_friends) {
                 friend_id: req.id
             }));
 
-            wrap.remove(); 
+            wrap.remove();
+            setTimeout(() => {
+                checkEmpty();
+            }, 0);
         };
 
         denyBtn.onclick = () => {
@@ -204,6 +238,9 @@ function requests_render(requests_friends) {
             }));
 
             wrap.remove();
+            setTimeout(() => {
+                checkEmpty();
+            }, 0);
         };
 
         wrap.appendChild(name);
@@ -212,6 +249,10 @@ function requests_render(requests_friends) {
         container.appendChild(wrap);
     });
 }
+
+
+
+
 
 
 
@@ -241,6 +282,8 @@ server.onmessage = (e) => {
 
         render_friends(data.friends);
         requests_render(data.Requestfriends)
+        checkEmpty();
+
 
         UserNameAccount = data.user;
 
@@ -270,13 +313,11 @@ server.onmessage = (e) => {
     else if(data.type === "add_friend"){
         requests_render(data.Requestfriends);
         render_friends(data.friends);
-        if(data.Requestfriends.length > 0){
-            const requests_container_message = document.getElementById("requests_container_message");
-            requests_container_message.textContent = "empty";
-        }
-
+        checkEmpty();
     } else if (data.type === "error") {
         answer.textContent = data.message;
+
+
     }else if(data.type === "It's_already_your_friend"){
         alert("He is already your friend")
    } else if (data.type === "new_message") {

@@ -1,5 +1,5 @@
-//let server = new WebSocket("ws://26.59.64.179:8080");
-let server = new WebSocket("wss://rosalyn-unparoled-larita.ngrok-free.dev");
+let server = new WebSocket("ws://127.0.0.1:8080");
+
 
 
 server.onopen = () => console.log("подключено")
@@ -33,8 +33,9 @@ login_button.addEventListener('click', () =>{
       password: passwordValue
     }));
       server.onmessage = (e) => {
+      let data = JSON.parse(e.data);
       console.log("📨 Ответ сервера:", e.data);
-      answer.textContent = e.data; 
+      answer.textContent = `User ${data.user} added`; 
     };
     }
 

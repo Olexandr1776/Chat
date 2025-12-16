@@ -254,7 +254,7 @@ main{
   font-size: 20px;
 }
 #messages{
-    height: 75%;     
+    height: 93%;     
     overflow-y: auto;    
     display: flex;
     flex-direction: column;
@@ -326,6 +326,9 @@ main{
 @media(max-width: 480px){
   .inputs{
     width: 90%
+  }
+  #messages{
+    height: 90%;
   }
   .inputs, #message_input {
     background: rgba(255, 255, 255, 0.9);
