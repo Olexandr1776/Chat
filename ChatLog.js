@@ -1,4 +1,5 @@
-let server = new WebSocket("ws://127.0.0.1:8080");
+let server = new WebSocket("wss://rosalyn-unparoled-larita.ngrok-free.dev");
+
 
 
 
