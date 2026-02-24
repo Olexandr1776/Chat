@@ -24,9 +24,9 @@ login_button.addEventListener('click', () =>{
     }else if(passwordValue.length < 8){
       answer.textContent = "The password must be at least eight";
     }else if(!/[0-9]/.test(passwordValue)){
-      answer.textContent = "The password must contain at least one character.";
+      answer.textContent = "The password must contain at least one number.";
     }else if (!/[A-Z]/.test(passwordValue)){
-      answer.textContent = "The password must contain at least one character.";
+      answer.textContent = "The password must contain at least one uppercase letter.";
     }else{
       server.send(JSON.stringify({
       type: "add_user",
